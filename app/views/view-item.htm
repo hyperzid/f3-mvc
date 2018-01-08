@@ -1,0 +1,14 @@
+<div class="content">
+	<form method="POST" action="{{ @BASE }}/item/update/{{ @POST.id }}">
+
+		<label>Item Name ( {{ @itemname }} )</label>
+		<br>
+		<input type="text" name="item_name" value="{{ @POST.item }}" /><br>
+		<input name="update" value="update" type="hidden" />
+		<button type="submit" name="update">Update</button>
+		<br>
+		<check if="{{ @SESSION.update_succ }}">
+    	<p>Updated Successfully</p>
+		</check>
+	</form>
+</div>

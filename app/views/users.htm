@@ -1,0 +1,18 @@
+<div class="content">
+	<table>
+		<tr>
+			<td>Name</td>
+			<td>Message</td>
+		</tr>
+	 <repeat group="{{ @users }}" value="{{ @user }}">
+		 <tr>
+			 <td>{{ trim(@user.name) }}</td>
+			 <td>{{ trim(@user.message) }}</td>
+		 </tr>
+	 </repeat>
+ </table>
+ <br>
+ <div style="text-align:center">
+ 		<a href="{{ @BASE }}/items">View Items</a>
+ </div>
+</div>

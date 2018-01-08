@@ -1,0 +1,33 @@
+<div class="content">
+	<check if="{{ @SESSION.delete_succ }}">
+		<p>Deleted Successfully</p>
+	</check>
+	<check if="{{ @SESSION.add_succ }}">
+		<p>Added Successfully</p>
+	</check>
+	<br>
+	<form method="POST" action="{{ @BASE }}/item/add/">
+
+		<input type="text" name="item_name" />
+		<button type="submit" name="add">Add Item</button>
+
+	</form>
+	<table>
+		<tr>
+			<td>Item ID</td>
+			<td>Item</td>
+			<td>Action</td>
+		</tr>
+	 <repeat group="{{ @items }}" value="{{ @item }}">
+		 <tr>
+			 <td>{{ trim(@item.id) }}</td>
+			 <td>{{ trim(@item.item) }}</td>
+			 <td><a href="{{ @BASE }}/item/update/{{ @item.id }}">View</a> | <a href="{{ @BASE }}/item/delete/{{ @item.id }}">Delete</a></td>
+		 </tr>
+	 </repeat>
+ </table>
+ <br>
+ <div style="text-align:center">
+	 <a href="{{ @BASE }}/">Back</a>
+ </div>
+</div>
