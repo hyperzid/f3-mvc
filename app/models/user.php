@@ -6,13 +6,17 @@ class User extends DB\SQL\Mapper {
     }
 
     public function showall() {
+
         $this->load();
         return $this->query;
+        
     }
 
     public function getByName($name) {
+
         $this->load(array('name=?',$name));
         $this->copyTo('POST');
+
     }
 
 }
