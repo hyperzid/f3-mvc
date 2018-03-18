@@ -1,1 +1,1 @@
-# f3-mvc
+# Fatfree Framework MVC Template
